@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">CarResearchTool</string>
+
+    <string-array name="budgets">
+        <item>"$5,000 - $15,000"</item>
+        <item>"$15,000 - $25,000"</item>
+        <item>"$25,000 - $35,000"</item>
+        <item>"$35,000 - $50,000"</item>
+        <item>"$50,000 - $75,000"</item>
+        <item>"$75,000+"</item>
+    </string-array>
+
+    <string-array name="manufacturers">
+        <item>"Acura"</item>
+        <item>"Buick"</item>
+        <item>"Chevrolet"</item>
+        <item>"Dodge"</item>
+        <item>"Ford"</item>
+        <item>"Honda"</item>
+        <item>"Hyundai"</item>
+        <item>"Jeep"</item>
+        <item>"Mazda"</item>
+        <item>"Nissan"</item>
+        <item>"Subaru"</item>
+        <item>"Tesla"</item>
+        <item>"Toyota"</item>
+        <item>"Volkswagen"</item>
+    </string-array>
 </resources>
