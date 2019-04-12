@@ -2,7 +2,7 @@
     <string name="app_name">CarResearchTool</string>
 
     <string-array name="budgets">
-        <item>"no preference"</item>
+        <!--<item>"no preference"</item>-->
         <item>"$5,000 - $15,000"</item>
         <item>"$15,000 - $25,000"</item>
         <item>"$25,000 - $35,000"</item>
@@ -12,8 +12,9 @@
     </string-array>
 
     <string-array name="manufacturers">
-        <item>"no preference"</item>
+        <!--<item>"no preference"</item>-->
         <item>"Acura"</item>
+        <item>"BMW"</item>
         <item>"Buick"</item>
         <item>"Chevrolet"</item>
         <item>"Dodge"</item>
@@ -22,6 +23,7 @@
         <item>"Hyundai"</item>
         <item>"Jaguar"</item>
         <item>"Jeep"</item>
+        <item>"Lexus"</item>
         <item>"Mazda"</item>
         <item>"Mercedes-Benz"</item>
         <item>"Nissan"</item>
@@ -30,18 +32,21 @@
         <item>"Tesla"</item>
         <item>"Toyota"</item>
         <item>"Volkswagen"</item>
+        <item>"Volvo"</item>
     </string-array>
 
     <string-array name="economy">
-        <item>"no preference"</item>
+        <!--<item>"no preference"</item>-->
+        <item>"5+"</item>
         <item>"10+"</item>
-        <item>"20+"</item>
+        <item>"15+"</item>
+        <item>"25+"</item>
         <item>"30+"</item>
-        <item>"40+"</item>
+        <item>"35+"</item>
     </string-array>
 
     <string-array name="seats">
-        <item>"no preference"</item>
+        <!--<item>"no preference"</item>-->
         <item>"2"</item>
         <item>"5"</item>
         <item>"6"</item>
@@ -50,7 +55,7 @@
     </string-array>
 
     <string-array name="years">
-        <item>"no preference"</item>
+        <!--<item>"no preference"</item>-->
         <item>"2000 - 2003"</item>
         <item>"2004 - 2007"</item>
         <item>"2008 - 2011"</item>
@@ -59,7 +64,7 @@
     </string-array>
 
     <string-array name="type">
-        <item>"no preference"</item>
+        <!--<item>"no preference"</item>-->
         <item>"Sedan"</item>
         <item>"Hatchback"</item>
         <item>"Sports"</item>
