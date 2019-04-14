@@ -1,15 +1,20 @@
 package com.akhilsukh01.carresearchtool;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        jsonToArray process = new jsonToArray();
+        process.execute();
+
         setContentView(R.layout.activity_main);
 
         Spinner spinner_budgets = (Spinner) findViewById(R.id.spinner_budgets);

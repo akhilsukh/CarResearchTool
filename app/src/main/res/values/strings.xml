@@ -37,7 +37,6 @@
 
     <string-array name="economy">
         <!--<item>"no preference"</item>-->
-        <item>"5+"</item>
         <item>"10+"</item>
         <item>"15+"</item>
         <item>"25+"</item>
@@ -65,13 +64,16 @@
 
     <string-array name="type">
         <!--<item>"no preference"</item>-->
+        <!--sedan has 4 doors and trunk-->
+        <!--sedan has no trunk-->
+        <!--coupe has 2 doors-->
         <item>"Sedan"</item>
         <item>"Hatchback"</item>
-        <item>"Sports"</item>
-        <item>"SUV"</item>
-        <item>"Pickup"</item>
         <item>"Coupe"</item>
         <item>"Luxury"</item>
+        <item>"Sports"</item>
         <item>"Electric"</item>
+        <item>"SUV"</item>
+        <item>"Pickup"</item>
     </string-array>
 </resources>
