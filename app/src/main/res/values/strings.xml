@@ -3,12 +3,14 @@
 
     <string-array name="budgets">
         <!--<item>"no preference"</item>-->
-        <item>"$5,000 - $15,000"</item>
-        <item>"$15,000 - $25,000"</item>
-        <item>"$25,000 - $35,000"</item>
+        <item>"$5,000 - $20,000"</item>
+        <item>"$20,000 - $35,000"</item>
         <item>"$35,000 - $50,000"</item>
-        <item>"$50,000 - $75,000"</item>
-        <item>"$75,000+"</item>
+        <item>"$50,000 - $65,000"</item>
+        <item>"$65,000 - $80,000"</item>
+        <item>"$80,000 - $95,000"</item>
+        <item>"$95,000 - $110,000"</item>
+        <item>"$110,000+"</item>
     </string-array>
 
     <string-array name="manufacturers">
