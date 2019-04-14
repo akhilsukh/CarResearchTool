@@ -1,0 +1,75 @@
+{
+  "cars": [{
+    "Manufacturer": "Acura",
+    "Make": "ILX",
+    "Price": 25900,
+    "Economy": 28,
+    "Seats": 5,
+    "Year": 2018,
+    "Type": "sedan"
+  },
+    {
+      "Manufacturer": "Acura",
+      "Make": "MDX",
+      "Price": 44300,
+      "Economy": 27,
+      "Seats": 7,
+      "Year": 2018,
+      "Type": "suv"
+    },
+    {
+      "Manufacturer": "Acura",
+      "Make": "NSX",
+      "Price": 160000,
+      "Economy": 21,
+      "Seats": 2,
+      "Year": 2014,
+      "Type": "sporty"
+    },
+    {
+      "Manufacturer": "Acura",
+      "Make": "RDX",
+      "Price": 37400,
+      "Economy": 24,
+      "Seats": 5,
+      "Year": 2012,
+      "Type": "suv"
+    },
+    {
+      "Manufacturer": "Acura",
+      "Make": "TLX",
+      "Price": 33000,
+      "Economy": 26,
+      "Seats": 5,
+      "Year": 2015,
+      "Type": "sedan"
+    },
+    {
+      "Manufacturer": "Acura",
+      "Make": "TL",
+      "Price": 40015,
+      "Economy": 25,
+      "Seats": 5,
+      "Year": 2012,
+      "Type": "luxury"
+    },
+    {
+      "Manufacturer": "Acura",
+      "Make": "TSX",
+      "Price": 20400,
+      "Economy": 26,
+      "Seats": 5,
+      "Year": 2010,
+      "Type": "sedan"
+    },
+    {
+      "Manufacturer": "Acura",
+      "Make": "ZDX",
+      "Price": 45495,
+      "Economy": 20,
+      "Seats": 5,
+      "Year": 2013,
+      "Type": "luxury"
+    }
+  ]
+}
