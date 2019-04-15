@@ -70,6 +70,24 @@
       "Seats": 5,
       "Year": 2013,
       "Type": "luxury"
+    },
+    {
+      "Manufacturer": "BMW",
+      "Make": "M3",
+      "Price": 66500,
+      "Economy": 20,
+      "Seats": 5,
+      "Year": 2019,
+      "Type": "sporty"
+    },
+    {
+      "Manufacturer": "BMW",
+      "Make": "X3",
+      "Price": 41000,
+      "Economy": 23,
+      "Seats": 5,
+      "Year": 2017,
+      "Type": "suv"
     }
   ]
 }

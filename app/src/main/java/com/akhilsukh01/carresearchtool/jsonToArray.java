@@ -23,19 +23,19 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
     String data = "";
     public static int counter = 0;
 
-    static ArrayList<String> array_manu = new ArrayList<>();
-    static ArrayList<String> array_make = new ArrayList<>();
-    static ArrayList<Integer> array_price = new ArrayList<>();
-    static ArrayList<Integer> array_econ = new ArrayList<>();
-    static ArrayList<Integer> array_seats = new ArrayList<>();
-    static ArrayList<Integer> array_year = new ArrayList<>();
-    static ArrayList<String> array_type = new ArrayList<>();
+    public static ArrayList<String> array_manu = new ArrayList<>();
+    public static ArrayList<String> array_make = new ArrayList<>();
+    public static ArrayList<Integer> array_price = new ArrayList<>();
+    public static ArrayList<Integer> array_econ = new ArrayList<>();
+    public static ArrayList<Integer> array_seats = new ArrayList<>();
+    public static ArrayList<Integer> array_year = new ArrayList<>();
+    public static ArrayList<String> array_type = new ArrayList<>();
 
     @Override
     protected Void doInBackground(Void... voids) {
 
         try {
-            URL url = new URL("https://akhilsukh01.github.io/CarResearchTool/app/src/main/res/raw/data.json");
+            URL url = new URL("https://akhilsukh01.github.io/CarResearchTool/data.json");
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
