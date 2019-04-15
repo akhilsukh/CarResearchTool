@@ -34,6 +34,14 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
     @Override
     protected Void doInBackground(Void... voids) {
 
+        array_manu.clear();
+        array_make.clear();
+        array_price.clear();
+        array_econ.clear();
+        array_seats.clear();
+        array_year.clear();
+        array_type.clear();
+
         try {
             URL url = new URL("https://akhilsukh01.github.io/CarResearchTool/data.json");
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -50,6 +58,7 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
             JSONArray car_object = root.getJSONArray("cars");
             for (int i = 0; i < car_object.length(); i++) {
                 JSONObject properties = car_object.getJSONObject(i);
+
                 String getManu = properties.getString("Manufacturer");
                 String getMake = properties.getString("Make");
                 Integer getPrice = properties.getInt("Price");
@@ -57,6 +66,7 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
                 Integer getSeats = properties.getInt("Seats");
                 Integer getYear = properties.getInt("Year");
                 String getType = properties.getString("Type");
+
                 array_manu.add(getManu);
                 array_make.add(getMake);
                 array_price.add(getPrice);
@@ -66,7 +76,7 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
                 array_type.add(getType);
 
             }
-            Log.i("DEBUG MANU", String.valueOf(array_make));
+            Log.i("DEBUG MANU", "jsonToArray: "+String.valueOf(array_make));
         //END OF PARSING
 
             } catch (MalformedURLException e) {

@@ -2,7 +2,6 @@ package com.akhilsukh01.carresearchtool;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,13 +9,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 public class MainActivity extends Activity {
 
     public static String prefManu;
     public static int prefBudget;
     public static int prefEcon;
     public static int prefSeats;
-    public static int prefYear ;
+    public static int prefYear;
     public static int prefType;
 
     @Override
@@ -58,6 +59,7 @@ public class MainActivity extends Activity {
         spinner_years.setAdapter(adapter_years);
         spinner_type.setAdapter(adapter_type);
 
+
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,7 +71,8 @@ public class MainActivity extends Activity {
                 prefYear = spinner_years.getSelectedItemPosition();
                 prefType = spinner_type.getSelectedItemPosition();
 
-                budgetAlgorithm(prefManu);
+                manuAlgorithm(prefManu);
+                priceAlgorithm(prefBudget);
 
                 Intent intent = new Intent(getApplicationContext(), ResultsActivity.class);
                 startActivity(intent);
@@ -78,19 +81,88 @@ public class MainActivity extends Activity {
 
     }
 
-    public void budgetAlgorithm(String tempPrefManu){
+    public void manuAlgorithm(String tempPrefManu) {
         int arrayLength = jsonToArray.array_manu.size();
-        for (int i = 0; i < arrayLength; i++){
-            if (!tempPrefManu.equalsIgnoreCase(jsonToArray.array_manu.get(i))){
-                jsonToArray.array_manu.remove(i);
-                jsonToArray.array_price.remove(i);
-                jsonToArray.array_econ.remove(i);
-                jsonToArray.array_year.remove(i);
-                jsonToArray.array_seats.remove(i);
-                jsonToArray.array_type.remove(i);
+
+        for (int i = 0; i < arrayLength; i++) {
+            if (!tempPrefManu.equals(jsonToArray.array_manu.get(i))) {
+                jsonToArray.array_manu.set(i, null);
+                jsonToArray.array_price.set(i, null);
+                jsonToArray.array_econ.set(i, null);
+                jsonToArray.array_year.set(i, null);
+                jsonToArray.array_seats.set(i, null);
+                jsonToArray.array_type.set(i, null);
             }
         }
-        Log.i("DEBUG MANU", jsonToArray.array_manu.toString());
-        return;
+        while(jsonToArray.array_price.remove(null));
+        while(jsonToArray.array_manu.remove(null));
+        while(jsonToArray.array_econ.remove(null));
+        while(jsonToArray.array_year.remove(null));
+        while(jsonToArray.array_seats.remove(null));
+        while(jsonToArray.array_type.remove(null));
+//        Log.i("DEBUG MANU", String.valueOf(arrayLength));
+//        Log.i("DEBUG MANU", "MainActivity: " + jsonToArray.array_manu.toString())
+    }
+
+    public void priceAlgorithm(int tempPrefPrice) {
+        int arrayLength1 = jsonToArray.array_manu.size();
+        int min = 0;
+        int max=0;
+
+        switch (tempPrefPrice)
+        {
+            case 0:
+                min=5000;
+                max=20000;
+                Log.i("DEBUG MANU", "MainActivity: 000-" + jsonToArray.array_manu.toString());
+                break;
+            case 1:
+                min=20000;
+                max=35000;
+                Log.i("DEBUG MANU", "MainActivity: 111-" + jsonToArray.array_manu.toString());
+                break;
+            case 2:
+                min=35000;
+                max=50000;
+                Log.i("DEBUG MANU", "MainActivity: 222-" + jsonToArray.array_manu.toString());
+                break;
+            case 3:
+                min=50000;
+                max=65000;
+                Log.i("DEBUG MANU", "MainActivity: 333-" + jsonToArray.array_manu.toString());
+                break;
+            case 4:
+                min=65000;
+                max=80000;
+                Log.i("DEBUG MANU", "MainActivity: 444-" + jsonToArray.array_manu.toString());
+                break;
+            case 5:
+                min=80000;
+                max=999999;
+                Log.i("DEBUG MANU", "MainActivity: 555-" + jsonToArray.array_manu.toString());
+                break;
+        }
+        for (int i = 0; i < arrayLength1; i++) {
+            if (!(jsonToArray.array_price.get(i) > min) && !(jsonToArray.array_price.get(i) < max)) {
+                jsonToArray.array_manu.set(i, null);
+                jsonToArray.array_price.set(i, null);
+                jsonToArray.array_econ.set(i, null);
+                jsonToArray.array_year.set(i, null);
+                jsonToArray.array_seats.set(i, null);
+                jsonToArray.array_type.set(i, null);
+            }
+        }
+        while(jsonToArray.array_price.remove(null));
+        while(jsonToArray.array_manu.remove(null));
+        while(jsonToArray.array_econ.remove(null));
+        while(jsonToArray.array_year.remove(null));
+        while(jsonToArray.array_seats.remove(null));
+        while(jsonToArray.array_type.remove(null));
+
+//        Log.i("DEBUG MANU", String.valueOf(arrayLength));
+        Log.i("DEBUG MANU", "MainActivity: Manu-" + jsonToArray.array_manu.toString());
+        Log.i("DEBUG MANU", "MainActivity: Make-" + jsonToArray.array_make.toString());
+        Log.i("DEBUG MANU", "MainActivity: Price-" + jsonToArray.array_price.toString());
+
     }
 }

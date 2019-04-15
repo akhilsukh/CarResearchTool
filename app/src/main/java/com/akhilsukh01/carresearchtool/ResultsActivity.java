@@ -14,4 +14,12 @@ public class ResultsActivity extends AppCompatActivity {
         Log.i("DEBUG MANU", "ResultsActivity has run");
 
     }
+
+    @Override
+    public void onBackPressed() {
+        jsonToArray process = new jsonToArray();
+        process.execute();
+
+        super.onBackPressed();
+    }
 }
