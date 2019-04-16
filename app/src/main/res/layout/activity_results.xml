@@ -6,8 +6,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="16sp"
+    android:paddingTop="16dp"
     tools:context=".ResultsActivity">
 
+    <ScrollView
+        android:id="@+id/scrollLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount="11"
+            tools:listitem="@layout/recycler_view_item">
+
+        </android.support.v7.widget.RecyclerView>
+
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/sorry_message"
+        android:visibility="gone"
+        android:foregroundGravity="center"
+        android:src="@drawable/sorrymessage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

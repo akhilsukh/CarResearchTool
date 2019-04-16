@@ -47,10 +47,10 @@
     <string-array name="seats">
         <!--<item>"no preference"</item>-->
         <item>"2"</item>
+        <item>"4"</item>
         <item>"5"</item>
         <item>"6"</item>
         <item>"7"</item>
-        <item>"8+"</item>
     </string-array>
 
     <string-array name="years">
@@ -70,7 +70,6 @@
         <item>"Sedan"</item>
         <item>"Hatchback"</item>
         <item>"Coupe"</item>
-        <item>"Luxury"</item>
         <item>"Sports"</item>
         <item>"Electric"</item>
         <item>"SUV"</item>

@@ -51,7 +51,7 @@
       "Economy": 25,
       "Seats": 5,
       "Year": 2012,
-      "Type": "luxury"
+      "Type": "sedan"
     },
     {
       "Manufacturer": "Acura",
@@ -69,7 +69,7 @@
       "Economy": 20,
       "Seats": 5,
       "Year": 2013,
-      "Type": "luxury"
+      "Type": "sedan"
     },
     {
       "Manufacturer": "BMW",

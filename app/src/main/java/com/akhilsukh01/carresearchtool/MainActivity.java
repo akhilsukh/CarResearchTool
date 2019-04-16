@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
     public static int prefEcon;
     public static int prefSeats;
     public static int prefYear;
-    public static int prefType;
+    public static String prefType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,10 +69,12 @@ public class MainActivity extends Activity {
                 prefEcon = spinner_econ.getSelectedItemPosition();
                 prefSeats = spinner_seats.getSelectedItemPosition();
                 prefYear = spinner_years.getSelectedItemPosition();
-                prefType = spinner_type.getSelectedItemPosition();
+                prefType = spinner_type.getSelectedItem().toString();
 
                 manuAlgorithm(prefManu);
                 priceAlgorithm(prefBudget);
+                seatsAlgorithm(prefSeats);
+                typeAlgorithm(prefType);
 
                 Intent intent = new Intent(getApplicationContext(), ResultsActivity.class);
                 startActivity(intent);
@@ -87,6 +89,7 @@ public class MainActivity extends Activity {
         for (int i = 0; i < arrayLength; i++) {
             if (!tempPrefManu.equals(jsonToArray.array_manu.get(i))) {
                 jsonToArray.array_manu.set(i, null);
+                jsonToArray.array_make.set(i, null);
                 jsonToArray.array_price.set(i, null);
                 jsonToArray.array_econ.set(i, null);
                 jsonToArray.array_year.set(i, null);
@@ -96,12 +99,14 @@ public class MainActivity extends Activity {
         }
         while(jsonToArray.array_price.remove(null));
         while(jsonToArray.array_manu.remove(null));
+        while(jsonToArray.array_make.remove(null));
         while(jsonToArray.array_econ.remove(null));
         while(jsonToArray.array_year.remove(null));
         while(jsonToArray.array_seats.remove(null));
         while(jsonToArray.array_type.remove(null));
-//        Log.i("DEBUG MANU", String.valueOf(arrayLength));
-//        Log.i("DEBUG MANU", "MainActivity: " + jsonToArray.array_manu.toString())
+        Log.i("DEBUG MANU", "MainActivity: Manu-" + jsonToArray.array_manu.toString());
+        Log.i("DEBUG MANU", "MainActivity: Make-" + jsonToArray.array_make.toString());
+        Log.i("DEBUG MANU", "MainActivity: Price-" + jsonToArray.array_price.toString());
     }
 
     public void priceAlgorithm(int tempPrefPrice) {
@@ -114,37 +119,32 @@ public class MainActivity extends Activity {
             case 0:
                 min=5000;
                 max=20000;
-                Log.i("DEBUG MANU", "MainActivity: 000-" + jsonToArray.array_manu.toString());
                 break;
             case 1:
                 min=20000;
                 max=35000;
-                Log.i("DEBUG MANU", "MainActivity: 111-" + jsonToArray.array_manu.toString());
                 break;
             case 2:
                 min=35000;
                 max=50000;
-                Log.i("DEBUG MANU", "MainActivity: 222-" + jsonToArray.array_manu.toString());
                 break;
             case 3:
                 min=50000;
                 max=65000;
-                Log.i("DEBUG MANU", "MainActivity: 333-" + jsonToArray.array_manu.toString());
                 break;
             case 4:
                 min=65000;
                 max=80000;
-                Log.i("DEBUG MANU", "MainActivity: 444-" + jsonToArray.array_manu.toString());
                 break;
             case 5:
                 min=80000;
                 max=999999;
-                Log.i("DEBUG MANU", "MainActivity: 555-" + jsonToArray.array_manu.toString());
                 break;
         }
         for (int i = 0; i < arrayLength1; i++) {
-            if (!(jsonToArray.array_price.get(i) > min) && !(jsonToArray.array_price.get(i) < max)) {
+            if (!(jsonToArray.array_price.get(i) > min && jsonToArray.array_price.get(i) < max)) {
                 jsonToArray.array_manu.set(i, null);
+                jsonToArray.array_make.set(i, null);
                 jsonToArray.array_price.set(i, null);
                 jsonToArray.array_econ.set(i, null);
                 jsonToArray.array_year.set(i, null);
@@ -154,6 +154,52 @@ public class MainActivity extends Activity {
         }
         while(jsonToArray.array_price.remove(null));
         while(jsonToArray.array_manu.remove(null));
+        while(jsonToArray.array_make.remove(null));
+        while(jsonToArray.array_econ.remove(null));
+        while(jsonToArray.array_year.remove(null));
+        while(jsonToArray.array_seats.remove(null));
+        while(jsonToArray.array_type.remove(null));
+        Log.i("DEBUG MANU", "MainActivity: Manu-" + jsonToArray.array_manu.toString());
+        Log.i("DEBUG MANU", "MainActivity: Make-" + jsonToArray.array_make.toString());
+        Log.i("DEBUG MANU", "MainActivity: Price-" + jsonToArray.array_price.toString());
+    }
+
+    public void seatsAlgorithm(int tempPrefSeats) {
+        int arrayLength2 = jsonToArray.array_manu.size();
+        int seatNum = 0;
+
+        switch (tempPrefSeats)
+        {
+            case 0:
+                seatNum=2;
+                break;
+            case 1:
+                seatNum=4;
+                break;
+            case 2:
+                seatNum=5;
+                break;
+            case 3:
+                seatNum=6;
+                break;
+            case 4:
+                seatNum=7;
+                break;
+        }
+        for (int i = 0; i < arrayLength2; i++) {
+            if (jsonToArray.array_seats.get(i) != seatNum) {
+                jsonToArray.array_manu.set(i, null);
+                jsonToArray.array_make.set(i, null);
+                jsonToArray.array_price.set(i, null);
+                jsonToArray.array_econ.set(i, null);
+                jsonToArray.array_year.set(i, null);
+                jsonToArray.array_seats.set(i, null);
+                jsonToArray.array_type.set(i, null);
+            }
+        }
+        while(jsonToArray.array_price.remove(null));
+        while(jsonToArray.array_manu.remove(null));
+        while(jsonToArray.array_make.remove(null));
         while(jsonToArray.array_econ.remove(null));
         while(jsonToArray.array_year.remove(null));
         while(jsonToArray.array_seats.remove(null));
@@ -163,6 +209,33 @@ public class MainActivity extends Activity {
         Log.i("DEBUG MANU", "MainActivity: Manu-" + jsonToArray.array_manu.toString());
         Log.i("DEBUG MANU", "MainActivity: Make-" + jsonToArray.array_make.toString());
         Log.i("DEBUG MANU", "MainActivity: Price-" + jsonToArray.array_price.toString());
-
     }
+
+    public void typeAlgorithm(String tempPrefType) {
+        int arrayLength = jsonToArray.array_manu.size();
+
+        for (int i = 0; i < arrayLength; i++) {
+            if (!tempPrefType.equals(jsonToArray.array_type.get(i))) {
+                jsonToArray.array_manu.set(i, null);
+                jsonToArray.array_make.set(i, null);
+                jsonToArray.array_price.set(i, null);
+                jsonToArray.array_econ.set(i, null);
+                jsonToArray.array_year.set(i, null);
+                jsonToArray.array_seats.set(i, null);
+                jsonToArray.array_type.set(i, null);
+            }
+        }
+        while(jsonToArray.array_price.remove(null));
+        while(jsonToArray.array_manu.remove(null));
+        while(jsonToArray.array_make.remove(null));
+        while(jsonToArray.array_econ.remove(null));
+        while(jsonToArray.array_year.remove(null));
+        while(jsonToArray.array_seats.remove(null));
+        while(jsonToArray.array_type.remove(null));
+        Log.i("DEBUG MANU", "MainActivity: Manu-" + jsonToArray.array_manu.toString());
+        Log.i("DEBUG MANU", "MainActivity: Make-" + jsonToArray.array_make.toString());
+        Log.i("DEBUG MANU", "MainActivity: Price-" + jsonToArray.array_price.toString());
+    }
+
+
 }

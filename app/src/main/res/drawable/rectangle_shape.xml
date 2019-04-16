@@ -9,7 +9,7 @@
             <!--corners allow us to make the rounded corners button-->
 
             <corners android:radius="12dp" />
-            <stroke android:width="2dp"/>
+            <stroke android:width="3dp"/>
         </shape>
     </item>
 </selector>
