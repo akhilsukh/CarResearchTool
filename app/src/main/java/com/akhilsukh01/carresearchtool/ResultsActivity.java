@@ -13,20 +13,23 @@ import java.util.ArrayList;
 
 public class ResultsActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
     private ExampleAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     ArrayList<ExampleItem> exampleList = new ArrayList<>();
     int n;
+
+    ImageView sorry_message;
+    RecyclerView mRecyclerView;
+    ScrollView scrolly;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        ImageView sorry_message = findViewById(R.id.sorry_message);
+        sorry_message = findViewById(R.id.sorry_message);
         mRecyclerView = findViewById(R.id.recycler_View);
-        ScrollView scrolly = findViewById(R.id.scrollLayout);
+        scrolly = findViewById(R.id.scrollLayout);
 
         exampleList.clear();
         final int counter = jsonToArray.array_manu.size();
@@ -56,6 +59,10 @@ public class ResultsActivity extends AppCompatActivity {
     public void onBackPressed() {
         jsonToArray process = new jsonToArray();
         process.execute();
+
+        sorry_message.setVisibility(View.GONE);
+        mRecyclerView.setVisibility(View.VISIBLE);
+        scrolly.setVisibility(View.VISIBLE);
 
         super.onBackPressed();
     }

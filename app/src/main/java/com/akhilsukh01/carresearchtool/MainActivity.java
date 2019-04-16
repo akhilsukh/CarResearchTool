@@ -215,7 +215,7 @@ public class MainActivity extends Activity {
         int arrayLength = jsonToArray.array_manu.size();
 
         for (int i = 0; i < arrayLength; i++) {
-            if (!tempPrefType.equals(jsonToArray.array_type.get(i))) {
+            if (!tempPrefType.equalsIgnoreCase(jsonToArray.array_type.get(i))) {
                 jsonToArray.array_manu.set(i, null);
                 jsonToArray.array_make.set(i, null);
                 jsonToArray.array_price.set(i, null);
