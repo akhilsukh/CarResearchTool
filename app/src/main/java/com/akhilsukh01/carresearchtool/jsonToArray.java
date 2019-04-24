@@ -43,7 +43,7 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
         array_type.clear();
 
         try {
-            URL url = new URL("https://akhilsukh01.github.io/CarResearchTool/data.json");
+            URL url = new URL("https://akhilsukh01.github.io/CarResearchToolJson/data.json");
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
