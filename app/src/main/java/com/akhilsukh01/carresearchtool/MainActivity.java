@@ -165,9 +165,12 @@ public class MainActivity extends Activity {
     }
 
     public void seatsAlgorithm(int tempPrefSeats) {
+        //array_manu is an int-array containing the number of seats for each car
         int arrayLength2 = jsonToArray.array_manu.size();
         int seatNum = 0;
 
+        //tempPrefSeats is an int passed to this method containing the user's # of seat preferences
+        //the switch statements assign a value to an int based on what the user chose
         switch (tempPrefSeats)
         {
             case 0:
@@ -186,6 +189,11 @@ public class MainActivity extends Activity {
                 seatNum=7;
                 break;
         }
+        //arrayLength2 is an int which has the value of the array length so the loop runs that many times
+        /*the if statement in the loop checks if the value in the array matches the user preference
+            if it matches, then the value stays there but if it doesn't match it gets replaced by null
+            the loops runs until it reaches the end of the array
+        */
         for (int i = 0; i < arrayLength2; i++) {
             if (jsonToArray.array_seats.get(i) != seatNum) {
                 jsonToArray.array_manu.set(i, null);
@@ -197,6 +205,7 @@ public class MainActivity extends Activity {
                 jsonToArray.array_type.set(i, null);
             }
         }
+        //the null value is then removed from this array as well as all the other arrays containing other user preferences or car details
         while(jsonToArray.array_price.remove(null));
         while(jsonToArray.array_manu.remove(null));
         while(jsonToArray.array_make.remove(null));
