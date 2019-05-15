@@ -43,22 +43,29 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
         array_type.clear();
 
         try {
-            URL url = new URL("https://akhilsukh01.github.io/CarResearchTool/data.json");
+            //the link below is where the json file mentioned is hosted online
+            URL url = new URL("https://akhilsukh01.github.io/CarResearchToolJson/data.json");
+            //proprietary code for creating a copy of an online file
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
             String line = "";
-
             while (line != null){
                 line = bufferedReader.readLine();
                 data = data + line;
             }
+            
             //PARSING JSON
+            //searching through the json file to reach the correct                                                                                                                     
             JSONObject root = new JSONObject(data);
             JSONArray car_object = root.getJSONArray("cars");
+            
+            //loop to go through each object in the json file and add each property to an indivisual array
+            //car_object is an object in the json file and it has the value of the number of properties in it
             for (int i = 0; i < car_object.length(); i++) {
                 JSONObject properties = car_object.getJSONObject(i);
-
+                
+                //temporarily saved the property to a string or int as shown below after the proprty is searched in quotes
                 String getManu = properties.getString("Manufacturer");
                 String getMake = properties.getString("Make");
                 Integer getPrice = properties.getInt("Price");
@@ -67,6 +74,7 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
                 Integer getYear = properties.getInt("Year");
                 String getType = properties.getString("Type");
 
+                //the temporary variable is added to the indivisual arrays
                 array_manu.add(getManu);
                 array_make.add(getMake);
                 array_price.add(getPrice);
@@ -76,17 +84,17 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
                 array_type.add(getType);
 
             }
-            Log.i("DEBUG MANU", "jsonToArray: "+String.valueOf(array_make));
+        Log.i("DEBUG MANU", "jsonToArray: "+String.valueOf(array_make));
         //END OF PARSING
 
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            return null;
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
