@@ -44,7 +44,7 @@ public class jsonToArray extends AsyncTask<Void, Void, Void> {
 
         try {
             //the link below is where the json file mentioned is hosted online
-            URL url = new URL("https://akhilsukh01.github.io/CarResearchToolJson/data.json");
+            URL url = new URL("https://raw.githubusercontent.com/akhilsukh01/CarResearchTool/master/data.json");
             //proprietary code for creating a copy of an online file
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
