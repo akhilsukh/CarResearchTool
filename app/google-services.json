@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "909434810379",
+    "firebase_url": "https://carresearchtool.firebaseio.com",
+    "project_id": "carresearchtool",
+    "storage_bucket": "carresearchtool.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:909434810379:android:e236fd326dcef99d",
+        "android_client_info": {
+          "package_name": "com.akhilsukh01.carresearchtool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "909434810379-hf9qftv2nvh9rho96ofdm30r8ihab5ei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akhilsukh01.carresearchtool",
+            "certificate_hash": "94678ac005554ae32a98ba8807d98d92fb427d0f"
+          }
+        },
+        {
+          "client_id": "909434810379-bk2o1dpiu76bnps9iafmn7055r04k0bu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAk8eBbNgC_5ZDHB4uyqKjRgvC5MmcA5nI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "909434810379-bk2o1dpiu76bnps9iafmn7055r04k0bu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
